@@ -2,11 +2,10 @@ class MainApp:
     def __init__(self):
         ## make environment variables and stuff
         return
+   
     def start(self):
-        ## write code here
-        print('hello werld')
-        return
-
+        while True:
+            value = input("Enter an input: ")
     
 if __name__ == "__main__":
     app = MainApp()
