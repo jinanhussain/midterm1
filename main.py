@@ -17,13 +17,14 @@ class MainApp:
             num1 = userInput[1]
             num2 = userInput[2]
             commandList = {"add": AddCommand, "subtract": SubtractCommand, "multiply": MultiplyCommand, "divide": DivideCommand }
-
-
             try:
                 commandClass = commandList[cmd]
                 commandClass.execute(self, params=(num1, num2))
             except:
                 print("failed")
+
+            ## try to append cmd, num1, num2 to history file
+
 
             # AddCommand.execute(self, params=(num1, num2))
 
