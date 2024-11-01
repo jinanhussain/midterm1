@@ -7464,3 +7464,142 @@
 2024-11-01 11:28:25.079482 - WARNING: Command 'multiply' from plugin 'multiply' registered.
 2024-11-01 11:28:25.079600 - WARNING: Command 'read_history' from plugin 'read_history' registered.
 2024-11-01 11:28:25.079652 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:01.717877 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:01.718284 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:01.718386 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:01.719343 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:01.719620 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:01.719675 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:01.720135 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:01.720215 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.761538 - WARNING: Application exit.
+2024-11-01 11:39:10.765664 - WARNING: Application exit.
+2024-11-01 11:39:10.768687 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.770258 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.770627 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.771616 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.772097 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.772233 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.772610 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.772732 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.772831 - WARNING: Addition failed
+2024-11-01 11:39:10.782855 - WARNING: Application exit.
+2024-11-01 11:39:10.785545 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.785677 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.785836 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.785947 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.786054 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.786168 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.786288 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.786396 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.787617 - WARNING: Application exit.
+2024-11-01 11:39:10.793892 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.793978 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.794067 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.794136 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.794204 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.794273 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.794340 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.794406 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.795961 - WARNING: Application exit.
+2024-11-01 11:39:10.797850 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.797938 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.798029 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.798100 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.798169 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.798238 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.798306 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.798374 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.799323 - WARNING: Application exit.
+2024-11-01 11:39:10.802018 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.802138 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.802239 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.802316 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.802388 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.802462 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.802533 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.802605 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.804030 - WARNING: Application exit.
+2024-11-01 11:39:10.805421 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.805503 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.805588 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.805654 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.805719 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.805784 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.805847 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.805911 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.806882 - WARNING: Application exit.
+2024-11-01 11:39:10.808289 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.808390 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.808483 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.808552 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.808619 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.808687 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.808753 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.808818 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.808869 - WARNING: Invalid input for division
+2024-11-01 11:39:10.809714 - WARNING: Application exit.
+2024-11-01 11:39:10.811202 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.811297 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.811389 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.811461 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.811532 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.811607 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.811674 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.811741 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.811794 - WARNING: Division failed
+2024-11-01 11:39:10.812733 - WARNING: Application exit.
+2024-11-01 11:39:10.814254 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.814362 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.814479 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.814553 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.814624 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.814698 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.814778 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.814848 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.815775 - WARNING: Application exit.
+2024-11-01 11:39:10.817769 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.817856 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.817945 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.818013 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.818082 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.818167 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.818263 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.818332 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.819486 - WARNING: Application exit.
+2024-11-01 11:39:10.820842 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.820920 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.821004 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.821071 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.821137 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.821203 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.821268 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.821347 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.822313 - WARNING: Application exit.
+2024-11-01 11:39:10.824247 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.824325 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.824410 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.824477 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.824544 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.824612 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.824675 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.824754 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.825934 - WARNING: Application exit.
+2024-11-01 11:39:10.827609 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.827706 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.827795 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.827863 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.827930 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.828034 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.828110 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.828191 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.829023 - WARNING: Application exit.
+2024-11-01 11:39:10.830572 - WARNING: Command 'add' from plugin 'add' registered.
+2024-11-01 11:39:10.830670 - WARNING: Command 'clear_history' from plugin 'clear_history' registered.
+2024-11-01 11:39:10.830768 - WARNING: Command 'divide' from plugin 'divide' registered.
+2024-11-01 11:39:10.830840 - WARNING: Command 'greet' from plugin 'greet' registered.
+2024-11-01 11:39:10.830928 - WARNING: Command 'menu' from plugin 'menu' registered.
+2024-11-01 11:39:10.831015 - WARNING: Command 'multiply' from plugin 'multiply' registered.
+2024-11-01 11:39:10.831127 - WARNING: Command 'read_history' from plugin 'read_history' registered.
+2024-11-01 11:39:10.831205 - WARNING: Command 'subtract' from plugin 'subtract' registered.
+2024-11-01 11:39:10.832208 - WARNING: Application exit.

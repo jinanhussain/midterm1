@@ -1,2 +1,6 @@
 command
-clear_history
+add 1 2
+multiply 3 4
+divide 10 2
+read_history extra_param
+subtract 2 1
