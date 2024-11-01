@@ -22,12 +22,10 @@ class MainApp:
         plugins_path = plugins_package.replace('.', '/')
         print(plugins_path)
         if not os.path.exists(plugins_path):
-            print("hello")
            # logging.warning(f"Plugins directory '{plugins_path}' not found.")
             return
         print(plugins_path)
         for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_path]):
-            print("hello")
             if is_pkg:
                 try:
                     plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
