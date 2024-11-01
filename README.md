@@ -1,5 +1,8 @@
 **CALCULATOR MIDTERM PROJECT**
 
+**LINK TO MY VIDEO:** https://drive.google.com/file/d/1oOp6fm0WBeXy2h5err5ht4TY6aE7GNUp/view?usp=sharing
+
+
 
 **OVERVIEW**: This project is a command-based application that supports arithmetic operations, history management, and logging. It is built using a modular, extensible architecture, allowing for each command to be implemented as a plugin. This design enables easy addition of new commands without modifying the core application, and it provides robust logging and error-handling mechanisms for maintainability.
 
