@@ -9,7 +9,7 @@ import pkgutil
 import importlib
 from commands import Command
 from commands import CommandHandler
-
+from logger import Logger
 
 
 class MainApp:
@@ -20,32 +20,24 @@ class MainApp:
     def load_plugins(self):
         plugins_package = 'plugins'
         plugins_path = plugins_package.replace('.', '/')
-        print(plugins_path)
         if not os.path.exists(plugins_path):
-           # logging.warning(f"Plugins directory '{plugins_path}' not found.")
+            Logger.warning(f"Plugins directory '{plugins_path}' not found.")
             return
-        print(plugins_path)
         for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_path]):
             if is_pkg:
                 try:
                     plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
-                    print(plugin_module)
                     self.register_plugin_commands(plugin_module, plugin_name)
-                except ImportError as e:
-                    return 
-                 #   logging.error(f"Error importing plugin {plugin_name}: {e}")
+                except ImportError as e: 
+                    Logger.error(f"Error importing plugin {plugin_name}: {e}")
+                    return
 
     def register_plugin_commands(self, plugin_module, plugin_name):
-        print(plugin_name)
-        print(plugin_module)
         for item_name in dir(plugin_module):
             item = getattr(plugin_module, item_name)
             if isinstance(item, type) and issubclass(item, Command) and item is not Command:
-               # Command names are now explicitly set to the plugin's folder name
-               self.command_handler.register_command(plugin_name, item())
-               # logging.info(f"Command '{plugin_name}' from plugin '{plugin_name}' registered.")
-
-
+                self.command_handler.register_command(plugin_name, item())
+                Logger.info(f"Command '{plugin_name}' from plugin '{plugin_name}' registered.")
 
 
     def appendToHistory(self, cmd, num1, num2):
@@ -58,52 +50,18 @@ class MainApp:
         })
         updated_data = pd.concat([existing_data, new_data], ignore_index=True)
         updated_data.to_csv(file_path, index=False)
-    def clearHistory(self): 
-        file_path = 'data/history.csv'
-        df = pd.read_csv(file_path)
-        df = df.drop(df.index[0:])
-        df.to_csv(file_path, index=False)
-    def readHistory(self): 
-        file_path = 'data/history.csv'
-        df = pd.read_csv(file_path)
-        print(df) 
+
 
     def start(self):
         while True:
-            value = input("Enter an input: ")
+            value = input("Enter an input or enter 'menu' to view options: ")
             value = value.strip().lower()
-            if value == "clear":
-                self.clearHistory()
-                continue 
-            if value == "read":
-                self.readHistory()
-                continue 
-
-
-           # userInput = value.split() 
-           # cmd = userInput[0]
-            
-            #num1 = userInput[1]
-            #num2 = userInput[2]
-
-
-            # historyCommandList = {"load": LoadCommand, "save" }
-            commandList = {"add": AddCommand, "subtract": SubtractCommand, "multiply": MultiplyCommand, "divide": DivideCommand}
+        
             try:
-                #commandClass = commandList[cmd]
-                #commandClass.execute(self, params=(num1, num2))
                 self.command_handler.execute_command(value)
             except Exception as e: 
                 print(e)
-
-
-            ## try to append cmd, num1, num2 to history file
-
-            ## create plugins for Load, save, clear, and delete 
-            #self.appendToHistory(cmd, num1, num2)
-    
-
-            # AddCommand.execute(self, params=(num1, num2))
+                Logger.error(f"Execute command failed with error {e}")
 
     
 if __name__ == "__main__":
