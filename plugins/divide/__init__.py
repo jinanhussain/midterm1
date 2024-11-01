@@ -20,3 +20,4 @@ class DivideCommand(Command):
             print("Error: Please provide two valid numbers.")
             Logger.log(f"Division failed")
             return None
+        

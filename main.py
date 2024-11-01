@@ -21,17 +21,11 @@ class MainApp:
     def load_plugins(self):
         plugins_package = 'plugins'
         plugins_path = plugins_package.replace('.', '/')
-        if not os.path.exists(plugins_path):
-            Logger.log(f"Plugins directory '{plugins_path}' not found.")
-            return
         for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_path]):
             if is_pkg:
-                try:
-                    plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
-                    self.register_plugin_commands(plugin_module, plugin_name)
-                except ImportError as e: 
-                    Logger.log(f"Error importing plugin {plugin_name}: {e}")
-                    return
+                plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
+                self.register_plugin_commands(plugin_module, plugin_name)
+
 
     def register_plugin_commands(self, plugin_module, plugin_name):
         for item_name in dir(plugin_module):
@@ -59,7 +53,7 @@ class MainApp:
             value = value.strip().lower()
             if value == "exit":
                 Logger.log("Application exit.")
-                sys.exit(0)  # Use sys.exit(0) for a clean exit, indicating success.
+                sys.exit(0)
         
             try:
                 self.command_handler.execute_command(value)

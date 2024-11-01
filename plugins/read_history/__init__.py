@@ -9,15 +9,9 @@ class ReadHistoryCommand(Command):
             return
         
         file_path = 'data/history.csv'
-        if not os.path.exists(file_path):
-            print("Error: History file does not exist.")
-            return
+        # if not os.path.exists(file_path):
+        #     print("Error: History file does not exist.")
+        #     return
+        df = pd.read_csv(file_path)
+        print("Loaded history:", len(df))
         
-        try:
-            df = pd.read_csv(file_path)
-            if df.empty:
-                print("History is empty.")
-            else:
-                print(df)
-        except Exception as e:
-            print(f"Error reading history: {e}")
