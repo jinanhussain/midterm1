@@ -3,7 +3,7 @@ from main import MainApp
 
 def test_app_greet_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'greet' command and outputs 'Hello, World!'."""
-    inputs = iter(['add 1 2', 'exit'])
+    inputs = iter(['subtract 2 1', 'exit'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     app = MainApp()
@@ -18,4 +18,4 @@ def test_app_greet_command(capfd, monkeypatch):
     out, err = capfd.readouterr()
     
 
-    assert "3" in out, "The 'add' command did not produce the expected output."
+    assert "1" in out, "The 'subtract' command did not produce the expected output."

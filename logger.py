@@ -63,4 +63,3 @@ class Logger:
         log = "{} - CRITICAL: {}".format(time, message)
         print(log)
         Logger.writeToFile(log)
-

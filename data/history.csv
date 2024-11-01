@@ -1,26 +1,10 @@
 command
 clear_history
-add 1 2
-multiply 4 2
 divide 4 2
+greet
+multiply 2 1
 read_history
-add 1 2
-menu
-add 1 2
-subtract 4 3
-multiply 2 2
-divide 4 2
-greet
-greet
-add 1 2
-greet
-add 1 2
-greet
-add 1 2
-greet
-add 1 2
-greet
-add 1 2
-divide 4 2
-add 1 2
-greet
+read_history extra_param
+read_history
+read_history
+subtract 2 1
