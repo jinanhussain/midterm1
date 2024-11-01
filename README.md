@@ -1,39 +1,6 @@
 Calculator Midterm Project
 This project is a command-based application designed to support arithmetic operations, history management, and logging. The system is built with modularity in mind, allowing commands to be implemented as plugins, which makes the code easily extensible. The application allows for commands like addition, subtraction, multiplication, and division, along with additional functionality such as clearing and reading command history.
 
-project_root/
-│
-├── .github/workflows/         # GitHub actions for CI/CD (automated testing)
-│   └── python-app.yml
-├── commands/                  # Command interface and handler
-│   └── __init__.py
-├── data/                      # Data storage for history
-│   └── history.csv
-├── plugins/                   # Plugin modules (commands)
-│   ├── add/
-│   ├── clear_history/
-│   ├── divide/
-│   ├── greet/
-│   ├── menu/
-│   ├── multiply/
-│   ├── read_history/
-│   └── subtract/
-├── tests/                     # Unit tests for all components
-│   ├── test_app.py
-│   ├── test_plugin_add.py
-│   ├── test_plugin_clear_history.py
-│   ├── test_plugin_divide.py
-│   ├── test_plugin_greet.py
-│   ├── test_plugin_menu.py
-│   ├── test_plugin_multiply.py
-│   ├── test_plugin_read_history.py
-│   └── test_plugin_subtract.py
-├── .gitignore
-├── README.md                  # Project documentation
-├── logger.py                  # Logger utility for application logging
-├── main.py                    # Main application entry point
-└── requirements.txt           # List of dependencies
-
 
 Main Components
 Main Application (main.py)
