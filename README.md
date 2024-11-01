@@ -1,97 +1,101 @@
-Calculator Midterm Project
-This project is a command-based application designed to support arithmetic operations, history management, and logging. The system is built with modularity in mind, allowing commands to be implemented as plugins, which makes the code easily extensible. The application allows for commands like addition, subtraction, multiplication, and division, along with additional functionality such as clearing and reading command history.
+**CALCULATOR MIDTERM PROJECT**
 
 
-Main Components
-Main Application (main.py)
-
-The main application manages user input and command execution:
-- MainApp Class: Initializes the command handler, loads plugins, and manages the main program loop.
-- load_plugins(): Dynamically loads command plugins from the plugins directory.
-- register_plugin_commands(): Registers each command with the command handler.
-- appendToHistory(): Logs each command to history.csv.
-- start(): Runs the REPL loop, handling user inputs until the user exits.
-
-Commands Module (commands/)
-This module contains:
-
-- Command Class (commands/__init__.py): Abstract base class that each plugin inherits, ensuring each command has an execute method.
-- CommandHandler Class: Manages command registration and execution.
-- register_command(): Registers commands by name.
-- execute_command(): Executes commands based on user input, using try-except for error handling (EAFP - Easier to Ask for Forgiveness than Permission).
-
-Plugins Module (plugins/)
-Each plugin is a separate command implementing the Command class:
-
-- add (add/__init__.py): Adds two numbers.
-- subtract (subtract/__init__.py): Subtracts one number from another.
-- multiply (multiply/__init__.py): Multiplies two numbers.
-- divide (divide/__init__.py): Divides two numbers, with a check for zero division.
-- clear_history (clear_history/__init__.py): Clears all entries in history.csv.
-- read_history (read_history/__init__.py): Reads and displays past commands from history.csv.
-- menu (menu/__init__.py): Lists available commands.
-- greet (greet/__init__.py): Greets the user.
-
-Logger Module (logger.py)
-The Logger class provides structured logging with multiple levels (INFO, WARNING, ERROR, CRITICAL). Based on the environment variable LOG_LEVEL, it logs messages accordingly.
-
-- log(): Determines log level and calls the respective log method.
-- writeToFile(): Writes log entries to a file specified by LOG_OUTPUT.
-- Static Logging Methods: Includes info, warning, error, and critical for structured logs with timestamps.
-- History File (data/history.csv)
-- Stores command history, where each entry includes the command name and parameters.
-- Updated by the MainApp class whenever a command is executed.
+**OVERVIEW**: This project is a command-based application that supports arithmetic operations, history management, and logging. It is built using a modular, extensible architecture, allowing for each command to be implemented as a plugin. This design enables easy addition of new commands without modifying the core application, and it provides robust logging and error-handling mechanisms for maintainability.
 
 
-Testing
-All tests are located in the tests/ directory, with pytest as the testing framework.
+**TABLE OF CONTENTS**
 
-test_app.py: Tests the main application flow, including command execution and error handling.
-test_plugin_ files*: Each file tests a specific plugin (e.g., test_plugin_add.py tests AddCommand).
+1. Setup Instructions
+2. Usage Examples
+3. Design Patterns
+  - Command Pattern
+  - Factory Method
+4. Environment Variables
+5. Logging Strategy
+6. Error Handling: LBYL and EAFP
+7. File Structure
 
-To run all tests, use pytest
 
-Example of Test Coverage
-- test_plugin_add.py: Ensures AddCommand correctly outputs the result of adding two numbers.
-- test_plugin_clear_history.py: Confirms clear_history command empties the history file.
-- test_plugin_divide.py: Verifies division logic, handling cases like division by zero.
+**SETUP INSTRUCTIONS**
+1. clone the repository:
+git clone <repository-url>
+cd <repository-folder>
+
+2. Install Dependencies:
+pip install -r requirements.txt
+
+3. Environment Configuration: Create a .env file in the root directory with the following variables:
+LOG_OUTPUT=logs.txt  # Path to log output file
+LOG_LEVEL=INFO       # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
 
 
-How to Use
-Starting the Application: Run the main script: python main.py
-Command Usage:
 
-Enter commands as [command] [param1] [param2].
-Type menu to see available commands, exit to quit.
+5. Prepare History File: Ensure data/history.csv exists with header:
+command
 
-**Example Commands:
-- add 5 3: Adds 5 and 3.
-- subtract 9 4: Subtracts 4 from 9.
-- multiply 7 8: Multiplies 7 by 8.
-- divide 12 3: Divides 12 by 3 (returns an error if dividing by zero).
 
-Design Patterns and Key Principles
+**USAGE EXAMPLES**
+1. Starting the Application: Run the main script:
+python main.py
 
-Design Patterns
-This project leverages key design patterns to enhance modularity, maintainability, and extensibility:
+2. Entering Commands:
+Commands follow the format: [command] [param1] [param2].
+Type menu to see a list of available commands, and exit to quit the application.
 
-Command Pattern: Each command (e.g., AddCommand, SubtractCommand, DivideCommand) is implemented as a separate class that inherits from an abstract Command class. This encapsulates each operation, making it easy to add new commands without modifying the core application. The CommandHandler class acts as a central hub to register and execute these commands, maintaining a clean and extensible design.
+3. Example Commands:
 
-Implementation: You can find the Command base class and CommandHandler implementation in commands/__init__.py, and individual commands in their respective files under the plugins directory.
-Factory Method: The application dynamically loads command plugins through the load_plugins() method in the MainApp class. This method scans the plugins directory, imports each command module, and registers it with the CommandHandler. This design allows new commands to be added simply by creating a new plugin file in the plugins directory, without modifying the main application code.
+add 5 3: Adds 5 and 3.
+subtract 9 4: Subtracts 4 from 9.
+multiply 7 8: Multiplies 7 by 8.
+divide 12 3: Divides 12 by 3 (returns an error if dividing by zero).
 
-Error Handling Principles
-Look Before You Leap (LBYL): Some commands, like DivideCommand, check parameters before executing.
-Easier to Ask for Forgiveness than Permission (EAFP): CommandHandler attempts to execute commands and handles exceptions if a command doesn’t exist, providing flexibility and robustness.
+**DESIGN PATTERNS**
 
-Environment Variables
-Environment variables are used to configure certain aspects of the application without hardcoding them, making the application more flexible and secure. In this project, the .env file contains two variables:
+1. Command Pattern
 
-LOG_OUTPUT: Specifies the file path for logging outputs.
+The Command Pattern is central to the application’s extensibility. Each command (such as AddCommand, SubtractCommand, DivideCommand) is implemented as a separate class inheriting from the Command abstract class. This approach encapsulates each operation, making it easy to add new commands without modifying the core application.
+
+Implementation: The Command base class and CommandHandler for managing commands are implemented in commands/__init__.py. Each individual command (e.g., AddCommand, DivideCommand) is implemented in its own file within the plugins directory, following the Command Pattern to isolate command logic.
+
+2. Factory Method
+The application uses a Factory Method in load_plugins() within main.py to dynamically load and register plugins (commands) from the plugins directory. This method scans the directory, imports each command module, and registers it with the CommandHandler. By doing so, it allows new commands to be added simply by creating a new plugin file without modifying the existing application code.
+
+Implementation: The Factory Method that dynamically loads and registers commands can be found in main.py, specifically within the load_plugins() function.
+These design patterns enable the application to be modular, maintainable, and easily extensible for future functionality.
+
+**ENVIORNMENT VARIABLES**
+Environment variables are used to configure certain aspects of the application without hardcoding values, making the application more flexible and secure. In this project, the .env file contains two variables:
+
+LOG_OUTPUT: Specifies the file path for the log output file.
 LOG_LEVEL: Sets the logging level, allowing control over which messages are logged based on severity (DEBUG, INFO, WARNING, ERROR, CRITICAL).
-The application reads these environment variables using the dotenv package in the logger.py module. This setup allows users to modify the logging behavior and output location without altering the code. For example, by setting LOG_LEVEL=DEBUG, the application will log all debug-level messages, while setting it to ERROR would only log error-level messages and higher. You can view this implementation in logger.py.
+The application reads these environment variables in the logger.py module using the dotenv package. This setup enables users to adjust the logging behavior and output location without altering the code itself. For example, setting LOG_LEVEL=DEBUG will log all debug-level messages, while setting it to ERROR will only log error-level messages and above.
 
-Logging
-The logging system is implemented in the Logger class within logger.py. The class provides various logging methods (info, warning, error, critical), each adding a timestamp and severity level to the log messages. Based on the LOG_LEVEL environment variable, the main log() method decides which logging method to invoke. Each message is printed to the console and written to a file specified by LOG_OUTPUT, ensuring that all relevant information is stored persistently. This logging mechanism is used throughout the application for tracking command execution and error handling, providing useful insights into the application's runtime behavior and simplifying debugging.
-c
-This documentation provides a full overview of your project's structure, setup, functionality, and testing approach. Each component is designed with modularity in mind, ensuring that your code is organized, extensible, and easy to maintain. Let me know if you need further details on any section!
+Implementation: You can see how environment variables are loaded and utilized in logger.py, specifically in the Logger class.
+
+
+**LOGGING STRATEGY**
+
+The logging system is implemented through the Logger class in logger.py, which provides structured logging with multiple levels (INFO, WARNING, ERROR, CRITICAL). Depending on the LOG_LEVEL environment variable, the main log() function decides which logging method to invoke, such as info(), warning(), error(), or critical().
+
+Each log entry includes a timestamp and severity level, and is both printed to the console and written to a file specified by LOG_OUTPUT. This central logging strategy keeps the application organized and provides a clear record of important events, including command executions and errors.
+
+By centralizing logging in the Logger class, the application can maintain consistent logs that are easy to review for debugging and monitoring purposes.
+
+Implementation: The detailed logging system, including level-based logging, is implemented in logger.py.
+
+
+**Error Handling: LBYL and EAFP**
+
+The application uses two common Python error-handling principles:
+
+Look Before You Leap (LBYL):
+
+LBYL is used in commands like DivideCommand to check for potential errors before executing, such as verifying that the divisor is not zero before performing the division.
+Implementation: You can find this approach in the execute() method of plugins/divide/__init__.py, where it checks if the divisor is zero to prevent a ZeroDivisionError.
+Easier to Ask for Forgiveness than Permission (EAFP):
+
+EAFP is used in the CommandHandler's execute_command() method, where the application attempts to execute a command and handles any KeyError if the command does not exist. This method allows the program to attempt an action and gracefully handle failures as they occur.
+Implementation: The EAFP error-handling principle is implemented in commands/__init__.py, specifically in the execute_command() method, where a KeyError is caught if an unregistered command is attempted.
+This combination of LBYL and EAFP provides a robust and flexible error-handling strategy, allowing the application to handle predictable errors proactively and unexpected errors reactively.
+
