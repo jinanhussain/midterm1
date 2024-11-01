@@ -1,4 +1,5 @@
 from commands import Command
+from logger import Logger
 
 class AddCommand(Command):
     def execute(self, params):
@@ -10,5 +11,7 @@ class AddCommand(Command):
                 return result
             except ValueError:
                 print("Error: Please provide two valid numbers.")
+                Logger.log(f"Invalid input for addition")
         else:
             print("Error: 'add' command requires exactly 2 parameters.")
+            Logger.log(f"Addition failed")

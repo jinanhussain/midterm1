@@ -10,6 +10,7 @@ import importlib
 from commands import Command
 from commands import CommandHandler
 from logger import Logger
+import sys
 
 
 class MainApp:
@@ -21,7 +22,7 @@ class MainApp:
         plugins_package = 'plugins'
         plugins_path = plugins_package.replace('.', '/')
         if not os.path.exists(plugins_path):
-            Logger.warning(f"Plugins directory '{plugins_path}' not found.")
+            Logger.log(f"Plugins directory '{plugins_path}' not found.")
             return
         for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_path]):
             if is_pkg:
@@ -29,7 +30,7 @@ class MainApp:
                     plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
                     self.register_plugin_commands(plugin_module, plugin_name)
                 except ImportError as e: 
-                    Logger.error(f"Error importing plugin {plugin_name}: {e}")
+                    Logger.log(f"Error importing plugin {plugin_name}: {e}")
                     return
 
     def register_plugin_commands(self, plugin_module, plugin_name):
@@ -37,7 +38,7 @@ class MainApp:
             item = getattr(plugin_module, item_name)
             if isinstance(item, type) and issubclass(item, Command) and item is not Command:
                 self.command_handler.register_command(plugin_name, item())
-                Logger.info(f"Command '{plugin_name}' from plugin '{plugin_name}' registered.")
+                Logger.log(f"Command '{plugin_name}' from plugin '{plugin_name}' registered.")
 
 
     def appendToHistory(self, cmd, num1, num2):
@@ -56,14 +57,16 @@ class MainApp:
         while True:
             value = input("Enter an input or enter 'menu' to view options: ")
             value = value.strip().lower()
+            if value == "exit":
+                Logger.log("Application exit.")
+                sys.exit(0)  # Use sys.exit(0) for a clean exit, indicating success.
         
             try:
                 self.command_handler.execute_command(value)
             except Exception as e: 
                 print(e)
-                Logger.error(f"Execute command failed with error {e}")
+                Logger.log(f"Execute command failed with error {e}")
 
-    
 if __name__ == "__main__":
     app = MainApp()
     app.load_plugins()

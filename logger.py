@@ -1,10 +1,13 @@
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
 class Logger:
-    
+    load_dotenv()
     @staticmethod
     def writeToFile(message):
-          # Open the file in append mode
-        with open('logs.txt', 'a') as file:
+        log_output = os.getenv('LOG_OUTPUT')
+        with open(log_output, 'a') as file:
             # Write or append text to the file
             file.write(message + "\n") 
 
@@ -16,11 +19,28 @@ class Logger:
         Logger.writeToFile(log)
 
     @staticmethod
+    def log(message):
+        log_level = os.getenv('LOG_LEVEL')
+        print(log_level)
+        if log_level == 'DEBUG':
+            Logger.debug(message)
+        elif log_level == 'INFO':
+            Logger.info(message)
+        elif log_level == 'ERROR':
+            Logger.error(message)
+        elif log_level == 'WARNING':
+            Logger.warning(message)
+        elif log_level == 'CRITICAL':
+            Logger.critical(message)
+    
+
+    @staticmethod
     def info(message):
         time = datetime.now()
         log = "{} - INFO: {}".format(time, message)
         print(log)
         Logger.writeToFile(log)
+    
 
     @staticmethod
     def warning(message):

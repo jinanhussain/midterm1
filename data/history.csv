@@ -5,3 +5,22 @@ multiply 4 2
 divide 4 2
 read_history
 add 1 2
+menu
+add 1 2
+subtract 4 3
+multiply 2 2
+divide 4 2
+greet
+greet
+add 1 2
+greet
+add 1 2
+greet
+add 1 2
+greet
+add 1 2
+greet
+add 1 2
+divide 4 2
+add 1 2
+greet
